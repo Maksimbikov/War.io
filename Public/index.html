@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн стрелялка</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="device-select" class="screen">
+        <h1>Выберите устройство</h1>
+        <button id="pc-btn">Играть на PC</button>
+        <button id="mobile-btn">Играть на телефоне</button>
+    </div>
+
+    <div id="nickname-screen" class="screen hidden">
+        <h1>Введите ваш никнейм</h1>
+        <input type="text" id="nickname-input" placeholder="Введите никнейм">
+        <p id="nickname-error" class="error hidden">Ошибка: возможно вы не ввели никнейм!!!</p>
+        <button id="play-btn">Играть</button>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <div id="game-ui">
+            <div id="player-stats">
+                <div id="health-bar">HP: 100</div>
+                <button id="players-list-btn">Список игроков</button>
+            </div>
+            <div id="players-list" class="hidden">
+                <h3>Игроки</h3>
+                <ul id="players-list-content"></ul>
+                <div>Убийств: <span id="kills-count">0</span></div>
+                <div>Смертей: <span id="deaths-count">0</span></div>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+        <div id="death-screen" class="hidden">
+            <h2>Вы умерли</h2>
+            <div id="respawn-timer">Респавн через: 5</div>
+            <button id="respawn-btn" class="hidden">Респавн</button>
+        </div>
+        <div id="mobile-controls" class="hidden">
+            <div id="joystick-move" class="joystick"></div>
+            <div id="joystick-shoot" class="joystick"></div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
